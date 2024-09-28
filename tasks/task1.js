@@ -3,11 +3,16 @@
 
 function replaceVowels(str) {
   const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-
-  let result = str.split('').map(char => {
-    return vowels.includes(char) ? '*' : char;
-  }).join('');
-
+  let result = '';
+  
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      result += '*';
+    } else {
+      result += str[i]; 
+    }
+  }
+  
   return result;
 }
 
